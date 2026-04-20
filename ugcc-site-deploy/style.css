@@ -14,10 +14,10 @@
   --header-h:    80px;
   --strip-h:     40px;
 }
-
+ 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
+ 
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -25,26 +25,26 @@ body {
   background: var(--bg);
   line-height: 1.65;
 }
-
+ 
 img { max-width: 100%; display: block; }
-
+ 
 a { color: var(--primary); text-decoration: none; }
 a:hover { color: var(--primary-dark); }
-
+ 
 .container {
   width: min(var(--container), calc(100% - 32px));
   margin: 0 auto;
 }
-
+ 
 /* Отступ для секций с фиксированной шапкой (шапка 80px + строка 40px = 120px).
    Только section[id] — не трогаем div#lightbox, div#candleWrap и др. */
 section[id] {
   scroll-margin-top: calc(var(--header-h) + var(--strip-h) + 8px);
 }
-
+ 
 .section { padding: 80px 0; }
 .section-alt { background: var(--bg-alt); }
-
+ 
 .section-header { margin-bottom: 40px; text-align: center; }
 .section-label {
   color: var(--gold); font-weight: 600; text-transform: uppercase;
@@ -53,7 +53,7 @@ section[id] {
 }
 .section-header h2 { margin: 0 0 10px; font-family: "Playfair Display", serif; font-size: 2.2rem; color: var(--primary-dark); }
 .section-subtext { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-
+ 
 /* HEADER */
 #site-header {
   position: fixed; top: 0; width: 100%;
@@ -63,7 +63,7 @@ section[id] {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
+ 
 .header-inner {
   display: flex; justify-content: space-between; align-items: center;
   height: var(--header-h);
@@ -73,7 +73,7 @@ section[id] {
 .brand { text-decoration: none; color: inherit; flex-shrink: 0; }
 .brand-name { font-weight: 700; font-size: 0.9rem; color: var(--primary-dark); white-space: nowrap; }
 .brand-sub { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
-
+ 
 .main-nav {
   flex: 1; display: flex; align-items: center; justify-content: center;
   flex-wrap: nowrap; gap: 0;
@@ -83,7 +83,7 @@ section[id] {
   white-space: nowrap; transition: color 0.3s; color: var(--text);
 }
 .main-nav a:hover { color: var(--gold); }
-
+ 
 .header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .lang-switcher { display: flex; gap: 3px; }
 .lang-switcher button {
@@ -93,26 +93,26 @@ section[id] {
 }
 .lang-switcher button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 .lang-switcher button:hover:not(.active) { background: var(--bg-alt); }
-
+ 
 .header-cta {
   background: var(--primary); color: #fff;
   padding: 6px 14px; border-radius: var(--radius); font-size: 0.8rem;
   transition: background 0.3s; white-space: nowrap;
 }
 .header-cta:hover { background: var(--primary-dark); color: #fff; }
-
+ 
 .burger { display: none; background: none; border: none; cursor: pointer; }
 .burger span { display: block; width: 25px; height: 3px; background: var(--primary-dark); margin: 5px 0; }
-
+ 
 .prayer-strip {
   background: var(--primary-dark); color: #fff;
   padding: 10px 0; text-align: center; font-size: 0.9rem;
   margin-top: var(--header-h);
 }
 .prayer-strip a { color: var(--gold); font-weight: 600; text-decoration: underline; }
-
+ 
 /* HERO — фото по центру, не розтягнуте, зберігає оригінальні пропорції */
-
+ 
 /* Ранковий «світанок» — плавна зміна фону при завантаженні */
 @keyframes dawn-rise {
   0%   { background: #8fa8b4; }   /* сутінковий туман */
@@ -120,7 +120,7 @@ section[id] {
   65%  { background: #baced7; }   /* майже прозоре небо */
   100% { background: #D4DDE1; }   /* фінальний «димок» */
 }
-
+ 
 /* Падаюча зірка */
 @keyframes star-fall {
   0%   { opacity: 0;   transform: translate(0, 0)           rotate(-38deg); }
@@ -128,7 +128,7 @@ section[id] {
   85%  { opacity: 1; }
   100% { opacity: 0;   transform: translate(-280px, 280px)  rotate(-38deg); }
 }
-
+ 
 .shooting-star {
   position: absolute;
   pointer-events: none;
@@ -159,7 +159,7 @@ section[id] {
     0 0 6px  3px rgba(255,255,255,0.9),
     0 0 14px 6px rgba(255,255,255,0.4);
 }
-
+ 
 #hero {
   background: #D4DDE1;
   animation: dawn-rise 7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -207,7 +207,7 @@ section[id] {
   font-size: 1.15rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.95;
   text-shadow: 0 1px 8px rgba(0,0,0,0.45);
 }
-
+ 
 /* Кнопки в герое — исправлен flex-контейнер */
 .hero-actions {
   display: flex; flex-wrap: wrap; justify-content: center;
@@ -225,35 +225,35 @@ section[id] {
   display: inline-block; transition: background 0.3s, transform 0.2s;
 }
 .btn-outline-white:hover { background: rgba(255,255,255,0.15); color: #fff; transform: translateY(-1px); }
-
+ 
 /* PARISH HISTORY — narrative two-column layout */
 @keyframes history-fade-in {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+ 
 .history-parish {
   background: #faf8f5;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-
+ 
 .history-prose-layout {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 64px;
   align-items: start;
 }
-
+ 
 .history-prose-layout.is-visible .history-prose-text,
 .history-prose-layout.is-visible .history-prose-image {
   animation: history-fade-in 0.75s ease both;
 }
-
+ 
 .history-prose-layout.is-visible .history-prose-image {
   animation-delay: 0.15s;
 }
-
+ 
 .history-prose-text {
   font-family: "Inter", sans-serif;
   font-size: 1.03rem;
@@ -263,20 +263,20 @@ section[id] {
   transform: translateY(28px);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
-
+ 
 .history-prose-text.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 .history-prose-text p {
   margin: 0 0 1.25em;
 }
-
+ 
 .history-prose-text p:last-child {
   margin-bottom: 0;
 }
-
+ 
 .history-final {
   font-family: "Playfair Display", serif;
   font-size: 1.1rem;
@@ -287,18 +287,18 @@ section[id] {
   margin-top: 1.6em !important;
   line-height: 1.7;
 }
-
+ 
 .history-prose-image {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.75s ease 0.15s, transform 0.75s ease 0.15s;
 }
-
+ 
 .history-prose-image.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 .history-prose-figure {
   margin: 0;
   border-radius: var(--radius);
@@ -307,14 +307,14 @@ section[id] {
   position: sticky;
   top: calc(var(--header-h) + var(--strip-h) + 20px);
 }
-
+ 
 .history-prose-figure img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
 }
-
+ 
 @media (max-width: 900px) {
   .history-prose-layout {
     grid-template-columns: 1fr;
@@ -329,7 +329,7 @@ section[id] {
     margin: 0 auto;
   }
 }
-
+ 
 @media (max-width: 480px) {
   .history-prose-text {
     font-size: 0.97rem;
@@ -338,7 +338,7 @@ section[id] {
     font-size: 1rem;
   }
 }
-
+ 
 /* HISTORY (old timeline — kept for reference) */
 .history-layout {
   display: grid;
@@ -419,24 +419,24 @@ section[id] {
   .history-photos { flex-direction: column; }
   .hist-pastor { margin-left: 0; }
 }
-
+ 
 /* TWO COLUMNS (About & Priest) */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .two-col-image img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; height: auto; object-fit: cover; }
 .stats-row { display: flex; gap: 30px; margin-top: 30px; }
 .stat-item strong { display: block; font-size: 1.5rem; color: var(--primary-dark); }
 .stat-item span { font-size: 0.9rem; color: var(--muted); }
-
+ 
 /* GRIDS */
 .sacraments-grid, .life-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
 }
-
+ 
 /* Ресурси і план — завжди 4 в ряд на десктопі */
 .planner-grid, .resources-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
 }
-
+ 
 /* CARDS */
 .planner-card, .resource-card, .sacrament-card, .life-card {
   background: var(--card); border-radius: var(--radius); padding: 30px;
@@ -446,7 +446,7 @@ section[id] {
 .plan-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
 .planner-card h3 { color: var(--primary-dark); margin-top: 0; }
 .planner-card ul { padding-left: 20px; color: var(--muted); }
-
+ 
 /* SACRAMENTS & LIFE IMAGES */
 .sacrament-card, .life-card, .resource-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .sacrament-img img, .life-card img, .resource-card img {
@@ -461,7 +461,7 @@ section[id] {
   transition: background 0.3s, color 0.3s;
 }
 .resource-btn:hover { background: var(--primary); color: #fff; }
-
+ 
 /* GALLERY */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
 .gallery-item {
@@ -478,7 +478,7 @@ section[id] {
 .gallery-item:hover .gallery-caption,
 .gallery-item:focus .gallery-caption { opacity: 1; }
 .gallery-item:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-
+ 
 /* PRAYER CARDS */
 .prayer-cards-grid { display: grid; gap: 20px; max-width: 800px; margin: 0 auto; }
 .prayer-card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
@@ -494,7 +494,7 @@ section[id] {
 .font-size-btn { background: var(--bg-alt); border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-weight: 600; }
 .prayer-scroll { max-height: 400px; overflow-y: auto; padding-right: 10px; line-height: 1.8; }
 .prayer-rubric { color: #d32f2f; font-style: italic; font-size: 0.9rem; margin-top: 15px; margin-bottom: 5px; }
-
+ 
 /* Картка-посилання (Чин Меси) */
 .prayer-card-ext { cursor: default; }
 .prayer-card-ext-inner {
@@ -510,7 +510,7 @@ section[id] {
   text-decoration: none;
 }
 .prayer-ext-link:hover { background: var(--gold); color: #fff; }
-
+ 
 /* SCHEDULE
    Исправление: border-radius и box-shadow на таблице с border-collapse:collapse
    не работают — переносим их на обёртку .schedule-wrap.
@@ -534,17 +534,17 @@ section[id] {
 .schedule-table th:last-child  { border-radius: 0 var(--radius) 0 0; }
 .schedule-table tbody tr:last-child td { border-bottom: none; }
 .schedule-note { text-align: center; margin: 0; padding: 12px 15px 16px; color: var(--muted); font-size: 0.9rem; }
-
+ 
 /* DONATE & CONTACTS */
 .donate-box { background: var(--card); padding: 40px; border-radius: var(--radius); text-align: center; max-width: 600px; margin: 0 auto; box-shadow: var(--shadow); }
 .iban-wrap { display: flex; justify-content: space-between; align-items: center; background: var(--bg-alt); padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace; font-size: 1.1rem; }
 .iban-wrap button { background: var(--primary); color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-family: "Inter", sans-serif; font-size: 0.85rem; font-weight: 600; transition: background 0.3s; }
 .iban-wrap button:hover { background: var(--gold); }
-
+ 
 .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .contacts-info h3 { color: var(--primary-dark); margin-top: 0; }
 .contacts-info p { margin-bottom: 20px; }
-
+ 
 /* SWIFT TOGGLE */
 .swift-toggle-btn {
   display: block; width: 100%; margin-top: 18px;
@@ -554,14 +554,14 @@ section[id] {
   transition: border-color 0.2s, background 0.2s;
 }
 .swift-toggle-btn:hover { border-color: var(--primary); background: var(--bg-alt); }
-
+ 
 .swift-panel {
   margin-top: 14px; border: 1px solid var(--line);
   border-radius: 12px; overflow: hidden;
   text-align: left;
 }
 .swift-panel[hidden] { display: none; }
-
+ 
 .swift-row {
   display: flex; align-items: center; justify-content: space-between;
   gap: 12px; padding: 12px 16px;
@@ -578,7 +578,7 @@ section[id] {
   font-size: 0.8rem; font-weight: 600; transition: background 0.3s;
 }
 .swift-value-wrap button:hover { background: var(--gold); }
-
+ 
 /* PAYPAL */
 .paypal-divider {
   display: flex; align-items: center; gap: 12px;
@@ -596,7 +596,7 @@ section[id] {
 }
 .paypal-btn:hover { background: #005a99; color: #fff; transform: translateY(-1px); }
 .paypal-btn svg { flex-shrink: 0; }
-
+ 
 /* FACEBOOK BUTTON */
 .fb-btn {
   display: inline-flex; align-items: center; gap: 12px;
@@ -610,7 +610,7 @@ section[id] {
 }
 .fb-btn:hover { background: #1465d8; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,119,242,0.40); }
 .fb-btn-icon { width: 22px; height: 22px; flex-shrink: 0; }
-
+ 
 /* CANDLE CSS ANIMATIONS */
 .candle-container { text-align: center; margin-top: 30px; padding: 20px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); }
 .candle { position: relative; width: 60px; height: 120px; background: linear-gradient(to right, #e0e0e0, #f5f5f5, #e0e0e0); margin: 30px auto; border-radius: 4px; cursor: pointer; }
@@ -619,7 +619,7 @@ section[id] {
 .flame-glow { display: none; position: absolute; top: -45px; left: 50%; width: 50px; height: 70px; background: radial-gradient(ellipse, rgba(251, 191, 36, 0.4) 0%, transparent 70%); transform: translateX(-50%); border-radius: 50%; animation: glow-pulse 2s ease-in-out infinite alternate; }
 .candle.lit .candle-flame, .candle.lit .flame-glow { display: block; }
 .candle-label { font-style: italic; color: var(--muted); font-size: 0.95rem; }
-
+ 
 @keyframes flicker {
   0%   { transform: translateX(-50%) scaleX(1) scaleY(1) rotate(-1deg); }
   33%  { transform: translateX(-50%) scaleX(0.95) scaleY(1.04) rotate(1deg); }
@@ -630,7 +630,7 @@ section[id] {
   from { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
   to   { opacity: 1;   transform: translateX(-50%) scale(1.05); }
 }
-
+ 
 /* FOOTER */
 .site-footer { background: var(--primary-dark); color: #fff; padding: 40px 0; text-align: center; }
 .footer-content { display: flex; flex-direction: column; align-items: center; gap: 20px; }
@@ -640,7 +640,7 @@ section[id] {
 .footer-nav a { color: #fff; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.3s; }
 .footer-nav a:hover { opacity: 1; }
 .footer-copy { font-size: 0.8rem; opacity: 0.7; }
-
+ 
 /* LIGHTBOX */
 .lightbox { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
@@ -650,7 +650,7 @@ section[id] {
 .lightbox-close { position: absolute; top: -40px; right: 0; background: none; border: none; color: #fff; font-size: 2.5rem; cursor: pointer; line-height: 1; transition: opacity 0.2s; }
 .lightbox-close:hover { opacity: 0.7; }
 .lightbox-caption { color: #fff; text-align: center; margin-top: 15px; font-size: 1.1rem; }
-
+ 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .burger { display: block; }
@@ -661,25 +661,25 @@ section[id] {
   }
   .main-nav.active { display: flex; }
   .main-nav a { margin: 10px 0; font-size: 1.1rem; }
-
+ 
   .header-cta { display: none; }
   .header-right { display: flex; gap: 10px; }
-
+ 
   .two-col, .contacts-grid { grid-template-columns: 1fr; }
   .two-col-rev .two-col-image { order: 2; }
   .two-col-rev .two-col-text { order: 1; }
   .planner-grid, .resources-grid { grid-template-columns: repeat(2, 1fr); }
-
+ 
   .iban-wrap { flex-direction: column; gap: 10px; text-align: center; font-size: 1rem; }
   .iban-wrap button { width: 100%; }
-
+ 
   /* На мобильных — таблица с горизонтальным скроллом через обёртку */
   .schedule-wrap { -webkit-overflow-scrolling: touch; }
-
+ 
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-outline-white { width: 100%; max-width: 280px; text-align: center; }
 }
-
+ 
 @media (max-width: 480px) {
   .section { padding: 50px 0; }
   .section-header h2 { font-size: 1.7rem; }
@@ -687,7 +687,7 @@ section[id] {
   .stats-row { flex-wrap: wrap; gap: 16px; }
   .planner-grid, .resources-grid { grid-template-columns: 1fr; }
 }
-
+ 
 /* ===================== PRAYER INTENTION FORM ===================== */
 .prayer-card-intention {
   background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
@@ -715,7 +715,7 @@ section[id] {
   color: var(--muted);
   font-size: 0.88rem;
 }
-
+ 
 .intention-form {
   display: flex;
   flex-direction: column;
@@ -768,7 +768,7 @@ section[id] {
 .intention-field textarea::placeholder {
   color: #9aa5b1;
 }
-
+ 
 .intent-honeypot {
   position: absolute !important;
   left: -9999px !important;
@@ -777,7 +777,7 @@ section[id] {
   opacity: 0 !important;
   pointer-events: none !important;
 }
-
+ 
 .intention-actions {
   display: flex;
   justify-content: flex-end;
@@ -832,7 +832,7 @@ section[id] {
 @keyframes intention-spin {
   to { transform: rotate(360deg); }
 }
-
+ 
 .intention-status {
   margin: 4px 0 0;
   font-size: 0.92rem;
@@ -847,7 +847,7 @@ section[id] {
   color: #c62828;
   font-weight: 600;
 }
-
+ 
 .intention-privacy {
   font-size: 0.8rem;
   color: var(--muted);
@@ -858,9 +858,10 @@ section[id] {
   padding-top: 10px;
   border-top: 1px dashed var(--line);
 }
-
+ 
 @media (max-width: 600px) {
   .prayer-card-intention-head { padding: 18px 18px 14px; }
   .intention-form { padding: 16px 18px 20px; gap: 12px; }
   .intention-submit-btn { width: 100%; min-width: 0; }
 }
+ 
